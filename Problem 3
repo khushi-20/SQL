@@ -1,0 +1,17 @@
+● List the customers, with their total sale amount. The list should be ordered by the
+total sale amount.
+mysql> select customer.first_name, sum(sales.amount) as total_amount
+    -> from sales
+    -> join customer on sales.costomer_id=customer.id
+    -> group by customer.id,customer.first_name
+    -> order by total_amount;
++------------+--------------+
+| first_name | total_amount |
++------------+--------------+
+| Harsh      |         4752 |
+| Ankit      |         6752 |
+| Indu       |         7954 |
+| Vijay      |         8239 |
+| Mayank     |        12079 |
++------------+--------------+
+5 rows in set (0.00 sec)
