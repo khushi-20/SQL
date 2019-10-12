@@ -1,0 +1,192 @@
+● Create the database and table
+mysql> create database college;
+Query OK, 1 row affected (0.68 sec)
+Database changed
+mysql> create table college_individual( id int, name varchar(255), email varchar(255), mentor_id int);
+Query OK, 0 rows affected (1.62 sec)
+
+
+● Populate the table with 20 entries. There should be at-least 5 mentors
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('1','Mayank pathak', 'mayank@gmail.com', null);
+Query OK, 1 row affected (0.49 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('2','Ankit choudhary', 'ankit@gmail.com', 1);
+Query OK, 1 row affected (0.33 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('3','Vijay Saini', 'vijay@gmail.com', null);
+Query OK, 1 row affected (1.25 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('4','Harish Solanki', 'harish@gmail.com', 1);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('5','Khushi Sharma', 'khushi@gmail.com', 3);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('6','Devina Negi', 'devina@gmail.com', 3);
+Query OK, 1 row affected (0.21 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('7','Himanshu Namdev', 'himanshu@gmail.com', null);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('8','Nitin Chauhan', 'nitin@gmail.com', 7);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('9','Sagar Kemwal', 'sagar@gmail.com', 7);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('10','Indu Rawat', 'indu@gmail.com', 1);
+Query OK, 1 row affected (0.20 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('11','Shashank Sharma', 'shashank@gmail.com', 1);
+Query OK, 1 row affected (0.18 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('12','Vaishali Kansal', 'vaishali@gmail.com', null);
+Query OK, 1 row affected (0.27 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('13','Mansi Sharma', 'mansi@gmail.com', 12);
+Query OK, 1 row affected (0.19 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('14','Himali', 'Himali@gmail.com', 12);
+Query OK, 1 row affected (0.26 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('15','Saloni Garg', 'Saloni@gmail.com', null);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('16','Jaspreet Singh', 'jaspreet@gmail.com', 15);
+Query OK, 1 row affected (0.20 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('17','Aditya Bhardwaj', 'aditya@gmail.com', 15);
+Query OK, 1 row affected (0.22 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('18','Harsh Bhardwaj', 'harsh@gmail.com', null);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('19','Shivagya Dixit', 'dixit@gmail.com', 18);
+Query OK, 1 row affected (0.19 sec)
+
+mysql> insert into college_individual(id, name, email, mentor_id)
+    -> values('20','Meenakshi Dixit', 'meenakshi@gmail.com', 18);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> select*from college_individual;
++------+-----------------+---------------------+-----------+
+| id   | name            | email               | mentor_id |
++------+-----------------+---------------------+-----------+
+|    1 | Mayank pathak   | mayank@gmail.com    |      NULL |
+|    2 | Ankit choudhary | ankit@gmail.com     |         1 |
+|    3 | Vijay Saini     | vijay@gmail.com     |      NULL |
+|    4 | Harish Solanki  | harish@gmail.com    |         1 |
+|    5 | Khushi Sharma   | khushi@gmail.com    |         3 |
+|    6 | Devina Negi     | devina@gmail.com    |         3 |
+|    7 | Himanshu Namdev | himanshu@gmail.com  |      NULL |
+|    8 | Nitin Chauhan   | nitin@gmail.com     |         7 |
+|    9 | Sagar Kemwal    | sagar@gmail.com     |         7 |
+|   10 | Indu Rawat      | indu@gmail.com      |         1 |
+|   11 | Shashank Sharma | shashank@gmail.com  |         1 |
+|   12 | Vaishali Kansal | vaishali@gmail.com  |      NULL |
+|   13 | Mansi Sharma    | mansi@gmail.com     |        12 |
+|   14 | Himali          | Himali@gmail.com    |        12 |
+|   15 | Saloni Garg     | Saloni@gmail.com    |      NULL |
+|   16 | Jaspreet Singh  | jaspreet@gmail.com  |        15 |
+|   17 | Aditya Bhardwaj | aditya@gmail.com    |        15 |
+|   18 | Harsh Bhardwaj  | harsh@gmail.com     |      NULL |
+|   19 | Shivagya Dixit  | dixit@gmail.com     |        18 |
+|   20 | Meenakshi Dixit | meenakshi@gmail.com |        18 |
++------+-----------------+---------------------+-----------+
+20 rows in set (0.00 sec)
+
+
+
+● List all mentee’s in alphabetical order
+mysql> select name as mentees from college_individual where mentor_id is not null
+    -> order by name;
++-----------------+
+| mentees         |
++-----------------+
+| Aditya Bhardwaj |
+| Ankit choudhary |
+| Devina Negi     |
+| Harish Solanki  |
+| Himali          |
+| Indu Rawat      |
+| Jaspreet Singh  |
+| Khushi Sharma   |
+| Mansi Sharma    |
+| Meenakshi Dixit |
+| Nitin Chauhan   |
+| Sagar Kemwal    |
+| Shashank Sharma |
+| Shivagya Dixit  |
++-----------------+
+14 rows in set (0.10 sec)
+
+
+
+● List all mentee’s along with their mentors
+mysql> select a.name as mentee, b.name as mentor
+    -> from college_individual a, college_individual b
+    -> where a.mentor_id=b.id;
++-----------------+-----------------+
+| mentee          | mentor          |
++-----------------+-----------------+
+| Ankit choudhary | Mayank pathak   |
+| Harish Solanki  | Mayank pathak   |
+| Indu Rawat      | Mayank pathak   |
+| Shashank Sharma | Mayank pathak   |
+| Khushi Sharma   | Vijay Saini     |
+| Devina Negi     | Vijay Saini     |
+| Nitin Chauhan   | Himanshu Namdev |
+| Sagar Kemwal    | Himanshu Namdev |
+| Mansi Sharma    | Vaishali Kansal |
+| Himali          | Vaishali Kansal |
+| Jaspreet Singh  | Saloni Garg     |
+| Aditya Bhardwaj | Saloni Garg     |
+| Shivagya Dixit  | Harsh Bhardwaj  |
+| Meenakshi Dixit | Harsh Bhardwaj  |
++-----------------+-----------------+
+14 rows in set (0.00 sec)
+
+
+
+● List all mentee’s whose mentor’s are using `@gmail` email domain.
+mysql> select name as mentee
+    -> from college_individual
+    -> where mentor_id is not null and email regexp 'gmail.com';
++-----------------+
+| mentee          |
++-----------------+
+| Ankit choudhary |
+| Harish Solanki  |
+| Khushi Sharma   |
+| Devina Negi     |
+| Nitin Chauhan   |
+| Sagar Kemwal    |
+| Indu Rawat      |
+| Shashank Sharma |
+| Mansi Sharma    |
+| Himali          |
+| Jaspreet Singh  |
+| Aditya Bhardwaj |
+| Shivagya Dixit  |
+| Meenakshi Dixit |
++-----------------+
+14 rows in set (0.16 sec)
