@@ -1,0 +1,37 @@
+our challenge
+● List all the sales, which were sold by a female to a person who is older than the
+age 35.
+● The list should be sorted by amount of sale.
+
+mysql> select customer.date_of_birth, seller.gender,sales.amount
+    -> from customer
+    -> join seller
+    -> on customer.id=seller.id
+    -> join sales
+    -> on customer.id=sales.id;
++---------------+--------+--------+
+| date_of_birth | gender | amount |
++---------------+--------+--------+
+| 1998-01-14    | female |   2738 |
+| 1991-12-04    | male   |   9341 |
+| 1967-04-29    | female |   8239 |
+| 1973-07-11    | male   |   4752 |
+| 1993-07-01    | female |   6752 |
++---------------+--------+--------+
+5 rows in set (0.00 sec)
+
+
+
+mysql> select customer.date_of_birth, seller.gender,sales.amount
+    -> from customer
+    -> join seller
+    -> on customer.id=seller.id
+    -> join sales
+    -> on customer.id=sales.id
+    -> where seller.gender='female' and (2019-year(customer.date_of_birth)>35);
++---------------+--------+--------+
+| date_of_birth | gender | amount |
++---------------+--------+--------+
+| 1967-04-29    | female |   8239 |
++---------------+--------+--------+
+1 row in set (0.02 sec)
