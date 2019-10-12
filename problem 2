@@ -213,18 +213,19 @@ ascending order.
 Mayank did two purchase, his first purchase shown should be of a lower
 value and the next of higher and so on.
 
-mysql> select customer.first_name, sales.amount from customer,sales
+mysql> select customer.first_name, sales.amount from customer, sales
     -> where customer.id=sales.costomer_id
-    -> order by sales.amount asc ,customer.first_name asc ;
+    -> order by customer.first_name, sales.amount;
 +------------+--------+
 | first_name | amount |
 +------------+--------+
-| Indu       |   1252 |
-| Mayank     |   2738 |
-| Harsh      |   4752 |
-| Indu       |   6702 |
 | Ankit      |   6752 |
-| Vijay      |   8239 |
+| Harsh      |   4752 |
+| Indu       |   1252 |
+| Indu       |   6702 |
+| Mayank     |   2738 |
 | Mayank     |   9341 |
+| Vijay      |   8239 |
 +------------+--------+
 7 rows in set (0.00 sec)
+
